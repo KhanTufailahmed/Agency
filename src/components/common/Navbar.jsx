@@ -35,9 +35,7 @@ const Navbar = () => {
 
         {/* Actions */}
         <div className="items-center hidden space-x-6 md:flex">
-          <button className="text-grayText hover:text-dark">
-            <ShoppingBag size={20} />
-          </button>
+          
           <a
             href="#contact"
             className="px-6 py-2 text-sm font-bold tracking-wide text-white uppercase transition-colors bg-dark hover:bg-primary hover:text-dark"

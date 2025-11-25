@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Services from "./components/Services";
-import Portfolio from "./components/Portfolio";
-import Testimonials from "./components/Testimonials";
-import Footer from "./components/Footer";
+import Navbar from "./components/common/Navbar";
+import Hero from "./components/home/Hero";
+import Services from "./components/home/Services";
+import Portfolio from "./components/home/Portfolio";
+import Testimonials from "./components/home/Testimonials";
+import Footer from "./components/common/Footer";
 import { RouterProvider } from "react-router-dom";
 import APPROUTES from "./routes/routes";
 

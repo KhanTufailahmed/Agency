@@ -1,90 +1,94 @@
-import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import React from "react";
+import {
+  Code,
+  Smartphone,
+  Palette,
+  Megaphone,
+  Share2,
+  Search,
+  ShoppingCart,
+  Wrench,
+} from "lucide-react";
 
-const services = [
+const servicesData = [
   {
-    id: "01",
+    icon: Code,
     title: "Web Development",
-    description:
-      "High-performance websites built with modern technologies like React, Next.js, and Tailwind.",
+    desc: "High-performance websites built with modern technologies like React, Next.js, and Tailwind.",
   },
   {
-    id: "02",
+    icon: Smartphone,
     title: "App Development",
-    description:
-      "Native and cross-platform mobile applications that provide seamless user experiences.",
+    desc: "Native and cross-platform mobile applications that provide seamless user experiences.",
   },
   {
-    id: "03",
+    icon: Palette,
     title: "UI/UX Design",
-    description:
-      "User-centric design that combines aesthetics with functionality to drive engagement.",
+    desc: "User-centric design that combines aesthetics with functionality to drive engagement.",
   },
   {
-    id: "04",
+    icon: Megaphone,
     title: "Digital Marketing",
-    description:
-      "Data-driven strategies to increase brand visibility and convert leads into customers.",
+    desc: "Data-driven strategies to increase brand visibility and convert leads into customers.",
   },
   {
-    id: "05",
+    icon: Share2,
     title: "Social Media",
-    description:
-      "Strategic content creation and management to grow your community across platforms.",
+    desc: "Strategic content creation and management to grow your community across platforms.",
   },
   {
-    id: "06",
+    icon: Search,
     title: "SEO Optimization",
-    description:
-      "Improving your search engine rankings to drive organic traffic to your digital assets.",
+    desc: "Improving your search engine rankings to drive organic traffic to your digital assets.",
   },
   {
-    id: "07",
-    title: "E-Commerce",
-    description:
-      "Scalable online stores built on Shopify or custom solutions to boost your sales.",
+    icon: ShoppingCart,
+    title: "E-commerce",
+    desc: "Scalable online stores built on Shopify or custom solutions to boost your sales.",
   },
   {
-    id: "08",
+    icon: Wrench,
     title: "Maintenance",
-    description:
-      "Ongoing support and updates to ensure your digital products remain secure and efficient.",
+    desc: "Ongoing support and updates to ensure your digital products remain secure and efficient.",
   },
 ];
 
-
 const Services = () => {
   return (
-    <section className="px-6 py-20 border-b md:py-32 border-dark/10">
+    <section className="px-6 py-20 border-b md:py-32 border-dark/10 bg-lightGray">
       <div className="mx-auto max-w-7xl">
-        <div className="flex flex-col items-start justify-between mb-16 md:flex-row md:items-end md:mb-24">
-          <h2 className="text-4xl font-bold tracking-tighter uppercase md:text-6xl text-dark">Our Services</h2>
-          <a href="#" className="items-center hidden mt-4 space-x-2 text-sm font-bold tracking-widest uppercase transition-colors md:flex text-dark hover:text-grayText md:mt-0">
-            <span>View All Services</span>
-            <ArrowUpRight size={16} />
-          </a>
+        <div className="mb-16">
+          <h2 className="mb-6 text-4xl font-bold tracking-tighter uppercase md:text-5xl text-dark">
+            Expertise
+          </h2>
+          <p className="max-w-2xl text-lg text-grayText">
+            Our team consists of experts in various fields, allowing us to offer
+            a full spectrum of digital services.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 gap-px border md:grid-cols-2 lg:grid-cols-4 bg-dark/10 border-dark/10">
-          {services.map((service) => (
-            <div key={service.id} className="bg-white p-8 md:p-10 hover:bg-primary transition-colors group h-full flex flex-col justify-between min-h-[300px]">
-              <div className="flex items-start justify-between mb-8">
-                <span className="font-mono text-sm text-grayText group-hover:text-dark">/{service.id}</span>
-                <ArrowUpRight className="transition-opacity opacity-0 group-hover:opacity-100 text-dark" size={20} />
+          {servicesData.map((service, index) => (
+            <div
+              key={index}
+              className="bg-white p-8 md:p-10 hover:bg-primary transition-colors group h-full flex flex-col min-h-[320px]"
+            >
+              <div className="mb-8">
+                <service.icon
+                  className="w-10 h-10 transition-transform duration-300 text-dark group-hover:scale-110"
+                  strokeWidth={1.5}
+                />
               </div>
-              <div>
-                <h3 className="mb-4 text-xl font-bold uppercase md:text-2xl text-dark">{service.title}</h3>
-                <p className="text-sm leading-relaxed text-grayText group-hover:text-dark">{service.description}</p>
+              <div className="mt-auto">
+                <h3 className="mb-4 text-xl font-bold uppercase text-dark">
+                  {service.title}
+                </h3>
+                <p className="text-sm leading-relaxed transition-colors text-grayText group-hover:text-dark/80">
+                  {service.desc}
+                </p>
               </div>
             </div>
           ))}
-        </div>
-        
-        <div className="mt-8 md:hidden">
-            <a href="#" className="flex items-center space-x-2 text-sm font-bold tracking-widest uppercase transition-colors text-dark hover:text-grayText">
-            <span>View All Services</span>
-            <ArrowUpRight size={16} />
-          </a>
         </div>
       </div>
     </section>

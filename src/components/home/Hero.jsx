@@ -31,14 +31,29 @@ const Hero = () => {
               transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
             >
               Creative <br />
-              <motion.span
+              {/* <motion.span
                 className="inline-block text-grayText"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35, duration: 0.8, ease: "easeOut" }}
               >
                 Digital
-              </motion.span>{" "}
+              </motion.span>{" "} */}
+              <motion.span
+                className="relative inline-block text-grayText"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35, duration: 0.8, ease: "easeOut" }}
+              >
+                Digital
+                {/* Always-active underline animation */}
+                <motion.span
+                  initial={{ width: 0 }}
+                  animate={{ width: "100%" }}
+                  transition={{ delay: 0.8, duration: 0.6, ease: "easeOut" }}
+                  className="absolute left-0 -bottom-1 h-[3px] bg-primary"
+                />
+              </motion.span>
               <br />
               <motion.span
                 initial={{ opacity: 0, y: 30 }}

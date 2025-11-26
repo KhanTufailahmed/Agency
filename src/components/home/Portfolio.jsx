@@ -3,30 +3,30 @@ import React from 'react';
 const projects = [
   {
     id: 1,
-    title: 'Abstract Shapes',
-    category: 'Branding',
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop',
+    title: 'E-Commerce Platform',
+    category: 'Web Development',
+    image: '/public/shopsphere.png',
     size: 'large'
   },
   {
     id: 2,
-    title: 'Modern Architecture',
-    category: 'Photography',
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2670&auto=format&fit=crop',
+    title: 'Library Management System',
+    category: 'Web Development',
+    image: '/public/sieslibrary.png',
     size: 'small'
   },
   {
     id: 3,
-    title: 'Neon Future',
-    category: 'Digital Art',
-    image: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2670&auto=format&fit=crop',
+    title: 'Job Portal',
+    category: 'Web Development',
+    image: '/public/jobportal.png',
     size: 'small'
   },
   {
     id: 4,
-    title: 'Minimal Interior',
-    category: 'Design',
-    image: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2600&auto=format&fit=crop',
+    title: 'E-Commerce Platform',
+    category: 'Web Development',
+    image: '/public/stitchandstyle.png',
     size: 'large'
   }
 ];
@@ -59,7 +59,7 @@ const Portfolio = () => {
                   <h3 className="text-2xl md:text-3xl font-bold uppercase mb-1 text-dark">{project.title}</h3>
                   <span className="text-sm text-grayText uppercase tracking-widest">{project.category}</span>
                 </div>
-                <span className="text-sm font-mono text-grayText">2024</span>
+                <span className="text-sm font-mono text-grayText">2025</span>
               </div>
             </div>
           ))}

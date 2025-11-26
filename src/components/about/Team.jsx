@@ -2,16 +2,14 @@ import React from "react";
 
 const teamMembers = [
   {
-    name: "Alex Morgan",
+    name: "Khan Tufail",
     role: "Founder & CEO",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2574&auto=format&fit=crop",
+    image: "/public/tufail.png",
   },
   {
-    name: "Sarah Lin",
+    name: "Khan Shoeb",
     role: "Creative Director",
-    image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2576&auto=format&fit=crop",
+    image: "/public/shoeb.png",
   },
   {
     name: "James Carter",
@@ -53,7 +51,11 @@ const Team = () => {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="object-cover w-full h-full transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105"
+                  className={`w-full h-full object-cover transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105 ${
+                    member.name === "Khan Shoeb"
+                      ? "object-top"
+                      : "object-center"
+                  }`}
                 />
                 <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-primary/20 group-hover:opacity-100 mix-blend-multiply"></div>
               </div>

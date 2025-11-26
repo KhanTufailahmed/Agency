@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,40 +22,32 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 border-b bg-lightGray/90 backdrop-blur-sm border-dark/10"
     >
       <div className="flex items-center justify-between h-20 px-6 mx-auto max-w-7xl">
-        {/* Logo */}
-        {/* <motion.a
-          href="/"
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.2 }}
-          className="text-2xl font-bold tracking-tighter uppercase text-dark"
-        >
-          Poomo.
-        </motion.a> */}
 
-        <motion.a
-          href="/"
+        {/* Logo */}
+        <motion.div
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
           className="flex items-center space-x-2"
         >
-          <img
-            src="by4k.png"
-            alt="Poomo Logo"
-            className="w-auto h-24"
-          />
-        </motion.a>
+          <Link to="/">
+            <img
+              src="by4k.png"
+              alt="Logo"
+              className="w-auto h-24"
+            />
+          </Link>
+        </motion.div>
 
         {/* Desktop Navigation */}
         <div className="items-center hidden space-x-8 md:flex">
           {navLinks.map((link) => (
-            <motion.a
+            <motion.div
               key={link.name}
-              href={link.href}
               className="relative text-sm font-medium tracking-wide uppercase text-grayText hover:text-dark"
               whileHover="hover"
               initial="initial"
             >
-              {link.name}
+              <Link to={link.href}>{link.name}</Link>
 
               {/* Underline Animation */}
               <motion.span
@@ -65,7 +58,7 @@ const Navbar = () => {
                 transition={{ duration: 0.25, ease: "easeOut" }}
                 className="absolute left-0 -bottom-1 h-[2px] bg-primary"
               />
-            </motion.a>
+            </motion.div>
           ))}
         </div>
 
@@ -75,12 +68,12 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
         >
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="px-6 py-2 text-sm font-bold tracking-wide text-white uppercase transition-colors bg-dark hover:bg-primary hover:text-dark"
           >
             Let's Talk
-          </a>
+          </Link>
         </motion.div>
 
         {/* Mobile Button */}
@@ -104,27 +97,33 @@ const Navbar = () => {
             className="absolute left-0 flex flex-col w-full px-6 py-8 space-y-6 border-b md:hidden top-20 bg-lightGray border-dark/10"
           >
             {navLinks.map((link) => (
-              <motion.a
+              <motion.div
                 key={link.name}
-                href={link.href}
                 whileHover={{ x: 6 }}
                 transition={{ duration: 0.2 }}
-                onClick={() => setIsOpen(false)}
-                className="text-lg font-medium tracking-wide uppercase text-dark"
               >
-                {link.name}
-              </motion.a>
+                <Link
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-lg font-medium tracking-wide uppercase text-dark"
+                >
+                  {link.name}
+                </Link>
+              </motion.div>
             ))}
 
-            <motion.a
+            <motion.div
               whileHover={{ scale: 1.03 }}
               transition={{ duration: 0.2 }}
-              href="#contact"
-              className="inline-block w-full px-6 py-3 text-sm font-bold tracking-wide text-center text-white uppercase transition-colors bg-dark hover:bg-primary hover:text-dark"
-              onClick={() => setIsOpen(false)}
             >
-              Let's Talk
-            </motion.a>
+              <Link
+                to="/contact"
+                className="inline-block w-full px-6 py-3 text-sm font-bold tracking-wide text-center text-white uppercase transition-colors bg-dark hover:bg-primary hover:text-dark"
+                onClick={() => setIsOpen(false)}
+              >
+                Let's Talk
+              </Link>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

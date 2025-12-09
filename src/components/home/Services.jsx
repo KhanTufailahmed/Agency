@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   Code,
   Smartphone,
@@ -57,37 +58,132 @@ const Services = () => {
   return (
     <section className="px-6 py-20 border-b md:py-32 border-dark/10 bg-lightGray">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-16">
-          <h2 className="mb-6 text-4xl font-bold tracking-tighter uppercase md:text-5xl text-dark">
+        {/* Animated Section Header - Only on scroll */}
+        <motion.div
+          className="mb-16"
+          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <motion.h2
+            className="mb-6 text-4xl font-bold tracking-tighter uppercase md:text-5xl text-dark"
+            initial={{ opacity: 0, x: -50, rotateX: 45 }}
+            whileInView={{ opacity: 1, x: 0, rotateX: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          >
             Expertise
-          </h2>
-          <p className="max-w-2xl text-lg text-grayText">
+          </motion.h2>
+          <motion.p
+            className="max-w-2xl text-lg text-grayText"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             Our team consists of experts in various fields, allowing us to offer
             a full spectrum of digital services.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
+        {/* Enhanced Animated Services Grid */}
         <div className="grid grid-cols-1 gap-px border md:grid-cols-2 lg:grid-cols-4 bg-dark/10 border-dark/10">
           {servicesData.map((service, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white p-8 md:p-10 hover:bg-primary transition-colors group h-full flex flex-col min-h-[320px]"
+              initial={{ 
+                opacity: 0, 
+                y: 80,
+                scale: 0.8,
+                rotateY: -15,
+                filter: "blur(10px)"
+              }}
+              whileInView={{ 
+                opacity: 1, 
+                y: 0,
+                scale: 1,
+                rotateY: 0,
+                filter: "blur(0px)"
+              }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                duration: 0.7,
+                delay: index * 0.12,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              whileHover={{
+                y: -12,
+                scale: 1.02,
+                rotateY: 2,
+                transition: { duration: 0.4, ease: "easeOut" },
+              }}
+              className="relative bg-white p-8 md:p-10 group h-full flex flex-col min-h-[320px] overflow-hidden cursor-pointer"
+              style={{ perspective: "1000px" }}
             >
-              <div className="mb-8">
-                <service.icon
-                  className="w-10 h-10 transition-transform duration-300 text-dark group-hover:scale-110"
-                  strokeWidth={1.5}
-                />
+              {/* Animated gradient background on hover */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-primary to-primary/80"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileHover={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4 }}
+              />
+
+              {/* Glow effect on hover */}
+              <motion.div
+                className="absolute inset-0"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                style={{
+                  background: "radial-gradient(circle at center, rgba(210,255,31,0.3) 0%, transparent 70%)",
+                }}
+              />
+
+              {/* Content */}
+              <div className="relative z-10">
+                {/* Static Icon */}
+                <div className="mb-8">
+                  <service.icon
+                    className="w-10 h-10 text-dark"
+                    strokeWidth={1.5}
+                  />
+                </div>
+
+                {/* Animated Text Content */}
+                <div className="mt-auto">
+                  <motion.h3
+                    className="mb-4 text-xl font-bold uppercase text-dark"
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.12 + 0.3 }}
+                  >
+                    {service.title}
+                  </motion.h3>
+                  <motion.p
+                    className="text-sm leading-relaxed transition-colors text-grayText group-hover:text-dark/90"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.12 + 0.4 }}
+                  >
+                    {service.desc}
+                  </motion.p>
+                </div>
               </div>
-              <div className="mt-auto">
-                <h3 className="mb-4 text-xl font-bold uppercase text-dark">
-                  {service.title}
-                </h3>
-                <p className="text-sm leading-relaxed transition-colors text-grayText group-hover:text-dark/80">
-                  {service.desc}
-                </p>
-              </div>
-            </div>
+
+              {/* Enhanced shadow on hover */}
+              <motion.div
+                className="absolute inset-0 shadow-2xl"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 0.2 }}
+                transition={{ duration: 0.3 }}
+                style={{
+                  boxShadow: "0 20px 60px rgba(0,0,0,0.3)",
+                }}
+              />
+            </motion.div>
           ))}
         </div>
       </div>

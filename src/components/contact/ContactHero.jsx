@@ -21,10 +21,21 @@ const ContactHero = () => {
       </div>
 
       {/* Background Decoration */}
-      <div className="absolute transform -translate-y-1/2 pointer-events-none select-none top-1/2 -right-20 md:-right-40 -z-0">
-        <span className="text-[12rem] md:text-[20rem] font-bold uppercase text-dark/5 leading-none whitespace-nowrap">
-          Contact
-        </span>
+      <div className="absolute transform -translate-y-1/2 pointer-events-none select-none top-1/2 right-0 -z-0">
+        <div className="text-[12rem] md:text-[20rem] font-bold uppercase text-dark/5 leading-none whitespace-nowrap flex">
+          {['C', 'O', 'N', 'T', 'A', 'C', 'T'].map((letter, index) => (
+            <span
+              key={index}
+              className="inline-block animate-slide-in"
+              style={{
+                animationDelay: `${index * 0.15}s`,
+                animationFillMode: 'both'
+              }}
+            >
+              {letter}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );

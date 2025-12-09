@@ -20,10 +20,21 @@ const ProjectsHero = () => {
       </div>
 
       {/* Background Decoration */}
-      <div className="absolute transform -translate-y-1/2 pointer-events-none select-none top-1/2 -right-20 md:-right-40 -z-0">
-        <span className="text-[10rem] md:text-[18rem] font-bold uppercase text-dark/5 leading-none whitespace-nowrap">
-          Projects
-        </span>
+      <div className="absolute transform -translate-y-1/2 pointer-events-none select-none top-1/2 right-0 -z-0">
+        <div className="text-[10rem] md:text-[18rem] font-bold uppercase text-dark/5 leading-none whitespace-nowrap flex">
+          {['P', 'R', 'O', 'J', 'E', 'C', 'T', 'S'].map((letter, index) => (
+            <span
+              key={index}
+              className="inline-block animate-slide-in"
+              style={{
+                animationDelay: `${index * 0.15}s`,
+                animationFillMode: 'both'
+              }}
+            >
+              {letter}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );

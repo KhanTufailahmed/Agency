@@ -26,40 +26,42 @@ const Hero = () => {
           >
             <motion.h1
               className="mb-6 text-5xl font-bold leading-none tracking-tighter uppercase md:text-7xl lg:text-9xl text-dark"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
             >
-              Creative <br />
-              {/* <motion.span
-                className="inline-block text-grayText"
-                initial={{ opacity: 0, y: 30 }}
+              {/* Creative - slides down last (after Digital completes) */}
+              <motion.span
+                className="inline-block"
+                initial={{ opacity: 0, y: "-100%" }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35, duration: 0.8, ease: "easeOut" }}
+                transition={{ delay: 1.8, duration: 0.6, ease: "easeOut" }}
               >
-                Digital
-              </motion.span>{" "} */}
+                Creative
+              </motion.span>
+              <br />
+              
+              {/* Digital - slides down second (after Agency completes) */}
               <motion.span
                 className="relative inline-block text-grayText"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: "-100%" }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35, duration: 0.8, ease: "easeOut" }}
+                transition={{ delay: 1.2, duration: 0.6, ease: "easeOut" }}
               >
                 Digital
-                {/* Always-active underline animation */}
+                {/* Underline animation */}
                 <motion.span
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
-                  transition={{ delay: 0.8, duration: 0.6, ease: "easeOut" }}
+                  transition={{ delay: 2.4, duration: 0.6, ease: "easeOut" }}
                   className="absolute left-0 -bottom-1 h-[3px] bg-primary"
                 />
               </motion.span>
               <br />
+              
+              {/* Agency - slides down first */}
               <motion.span
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
                 className="inline-block"
+                initial={{ opacity: 0, y: "-100%" }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }}
               >
                 Agency
               </motion.span>

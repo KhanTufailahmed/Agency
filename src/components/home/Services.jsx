@@ -23,21 +23,6 @@ const servicesData = [
     desc: "Native and cross-platform mobile applications that provide seamless user experiences.",
   },
   {
-    icon: Palette,
-    title: "UI/UX Design",
-    desc: "User-centric design that combines aesthetics with functionality to drive engagement.",
-  },
-  {
-    icon: Megaphone,
-    title: "Digital Marketing",
-    desc: "Data-driven strategies to increase brand visibility and convert leads into customers.",
-  },
-  {
-    icon: Share2,
-    title: "Social Media",
-    desc: "Strategic content creation and management to grow your community across platforms.",
-  },
-  {
     icon: Search,
     title: "SEO Optimization",
     desc: "Improving your search engine rankings to drive organic traffic to your digital assets.",
@@ -46,12 +31,7 @@ const servicesData = [
     icon: ShoppingCart,
     title: "E-commerce",
     desc: "Scalable online stores built on Shopify or custom solutions to boost your sales.",
-  },
-  {
-    icon: Wrench,
-    title: "Maintenance",
-    desc: "Ongoing support and updates to ensure your digital products remain secure and efficient.",
-  },
+  }
 ];
 
 const Services = () => {

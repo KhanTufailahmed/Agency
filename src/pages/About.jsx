@@ -5,7 +5,6 @@ import AboutHero from "../components/about/AboutHero";
 import CompanyIntro from "../components/about/CompanyIntro";
 import MissionVision from "../components/about/MissionVision";
 import Values from "../components/about/Values";
-import Team from "../components/about/Team";
 import CTA from "../components/about/Cta";
 
 const About = () => {
@@ -17,7 +16,6 @@ const About = () => {
         <CompanyIntro />
         <MissionVision />
         <Values />
-        <Team />
         <CTA />
       </div>
       <Footer></Footer>

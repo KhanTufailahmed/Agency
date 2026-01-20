@@ -33,51 +33,6 @@ const detailedServices = [
       "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2670&auto=format&fit=crop",
   },
   {
-    id: "ui-ux",
-    title: "UI/UX Design",
-    subtitle: "Designing interfaces that users love.",
-    description:
-      "Great design is about how it works, not just how it looks. Our design team conducts thorough user research to create interfaces that are intuitive, accessible, and delightful to use. We prototype, test, and iterate to ensure the best possible user experience.",
-    features: [
-      "User Research & Personas",
-      "Wireframing & Prototyping",
-      "Design Systems",
-      "Usability Testing",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2564&auto=format&fit=crop",
-  },
-  {
-    id: "marketing",
-    title: "Digital Marketing",
-    subtitle: "Strategies that drive real growth.",
-    description:
-      "Building a great product is only half the battle. We help you reach your target audience through data-driven marketing strategies. From SEO to social media campaigns, we focus on metrics that matter—conversions and ROI.",
-    features: [
-      "Search Engine Optimization",
-      "Content Strategy",
-      "Social Media Marketing",
-      "PPC Campaigns",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=2631&auto=format&fit=crop",
-  },
-  {
-    id: "social-media",
-    title: "Social Media Handling",
-    subtitle: "Grow your brand’s presence online.",
-    description:
-      "We manage your social media presence with strategic planning, content creation, and engagement tactics. Our goal is to increase your visibility, build trust, and help you connect with your audience across all major platforms.",
-    features: [
-      "Content Creation",
-      "Page & Profile Optimization",
-      "Community Management",
-      "Growth Strategy",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=2600&auto=format&fit=crop",
-  },
-  {
     id: "seo",
     title: "SEO Optimization",
     subtitle: "Rank higher and get discovered organically.",
@@ -106,21 +61,6 @@ const detailedServices = [
     ],
     image:
       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2600&auto=format&fit=crop",
-  },
-  {
-    id: "maintenance",
-    title: "Maintenance & Support",
-    subtitle: "Keeping your digital presence running smoothly.",
-    description:
-      "We offer long-term maintenance and support to ensure your website or app stays secure, updated, and performing at its best. From bug fixes to feature enhancements, we’re here to assist.",
-    features: [
-      "Performance Monitoring",
-      "Security Updates",
-      "Bug Fixing",
-      "Regular Backups",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=2600&auto=format&fit=crop",
   },
 ];
 
